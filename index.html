@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOJA</title>
+
+    <style>
+     
+    </style>
+</head>
+<body>
+    <main>
+        <div id="container_produtos">
+
+        </div>
+    </main>
+</body>
+
+    <script>
+
+        const produtos = [
+          ["img/camisa.jpg" , "Camisa Branca", "apenas uma camisa", "R$ 50.00"],
+          ["img/3 camisas.jpg","3 Camisas sociais", "Três camisas sociais", "R$ 120.00"],
+          ["img/5 camisas.jpg","5 Camisas sociais", "Cinco camisas sociais", "R$ 200.00"],
+         
+
+        ]
+
+
+        for(var x=0; x< produtos.length;x++){
+            var containerProduto = document.createElement('div')
+            var container_produtos = document.getElementById('container_produtos')
+            container_produtos.classList.add("container_produtos")
+
+            var imagem = document.createElement('img')
+            imagem.style.border = '10px solid  #e2e2e2' 
+           
+            var nome = document.createElement('h2')
+            var descricao = document.createElement('p')
+            var preco = document.createElement('h4')
+           
+           
+            var botao = document.createElement('input')
+            botao.type = 'button' , botao.value = 'Comprar' , botao.style.cursor = 'pointer'
+            
+          
+           imagem.src = produtos[x][0]
+           nome.innerText = produtos[x][1]
+           descricao.innerHTML = produtos[x][2]
+           preco.innerText = produtos[x][3]
+           
+            containerProduto.style.border = '1px solid black'
+            containerProduto.style.padding = '10px'
+            containerProduto.style.width = '300px'
+            containerProduto.style.backgroundColor = 'beige'
+            containerProduto.style.margin = '20px'
+            
+            container_produtos.appendChild(containerProduto)
+            containerProduto.appendChild(imagem)
+            containerProduto.appendChild(nome)
+            containerProduto.appendChild(descricao)
+            containerProduto.appendChild(preco)
+            containerProduto.appendChild(botao)
+        }
+
+    </script>
+</html> 
